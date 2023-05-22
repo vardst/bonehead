@@ -1,0 +1,12 @@
+/Lib/
+/Include/
+/Scripts/
+/share/
+/.env
+/.vscode/
+/pyvenv.cfg
+/data/
+/downloads/
+*.ipynb
+/__pycache__/
+main.ipynb
