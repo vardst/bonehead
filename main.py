@@ -2,6 +2,7 @@ import pyautogui
 from PIL import Image
 import pytesseract
 import keyboard
+import time
 
 def get_stats():
     screenshot = pyautogui.screenshot(region=(35, 620, 380, 130))
@@ -27,8 +28,14 @@ def get_stats():
     def_data = stats[3].split(" ")[1]
     print(f"hp = {hp_data}, speed = {spd_data}, atk = {atk_data}, def = {def_data}, name = {name_text}")
 
+def drop_item():
+    pyautogui.click(146,794)
+
 if __name__ == "__main__":
     while True:
-        if keyboard.is_pressed("q"):
+        if keyboard.is_pressed("f12"):
             get_stats()
-            
+        if keyboard.is_pressed("right ctrl"):
+            drop_item()
+            time.sleep(0.5)
+            pyautogui.click(-219,21)
