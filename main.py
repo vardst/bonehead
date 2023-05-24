@@ -30,6 +30,10 @@ def get_stats():
 
 def drop_item():
     pyautogui.click(146,794)
+    time.sleep(0.5)
+
+def activate_spreadsheet():
+    pyautogui.click(-219,21)
 
 if __name__ == "__main__":
     while True:
@@ -37,5 +41,5 @@ if __name__ == "__main__":
             get_stats()
         if keyboard.is_pressed("right ctrl"):
             drop_item()
-            time.sleep(0.5)
-            pyautogui.click(-219,21)
+            activate_spreadsheet()
+            
