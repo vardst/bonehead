@@ -3,6 +3,7 @@ from PIL import Image
 import pytesseract
 import keyboard
 import time
+from 
 
 def get_stats():
     screenshot = pyautogui.screenshot(region=(35, 620, 380, 130))
@@ -28,18 +29,37 @@ def get_stats():
     def_data = stats[3].split(" ")[1]
     print(f"hp = {hp_data}, speed = {spd_data}, atk = {atk_data}, def = {def_data}, name = {name_text}")
 
+def dig_item():
+    pyautogui.click(241,829)
+    time.sleep(0.5)
+
 def drop_item():
     pyautogui.click(146,794)
     time.sleep(0.5)
 
 def activate_spreadsheet():
-    pyautogui.click(-219,21)
+    pyautogui.click(-250,21)
+
+def boss():
+    pyautogui.click(317,483)
+    time.sleep(3)
+    pyautogui.click(326,338)
+    time.sleep(3)
+    pyautogui.click(317,483)
+    time.sleep(16)
+    pyautogui.click(222,882)
+    time.sleep(2)
+    pyautogui.click(208,950)
+    time.sleep(5)
 
 if __name__ == "__main__":
     while True:
-        if keyboard.is_pressed("f12"):
-            get_stats()
-        if keyboard.is_pressed("right ctrl"):
-            drop_item()
-            activate_spreadsheet()
-            
+        # if keyboard.is_pressed("-"):
+        #     break
+        # if keyboard.is_pressed("right ctrl"):
+        #     drop_item()
+        #     activate_spreadsheet()
+        # if keyboard.is_pressed("right shift"):
+        #     dig_item()
+        #     activate_spreadsheet()
+        boss()
